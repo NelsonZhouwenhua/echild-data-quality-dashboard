@@ -1,0 +1,9 @@
+# Executable synthetic phenotype examples
+
+> These examples use simplified synthetic variables. They are not clinical code lists.
+
+| phenotype                    | version   | description                                                                      |   eligible_children |   flagged_children | prevalence_among_eligible   | coverage_of_spine   | limitations                                                                                                          |
+|:-----------------------------|:----------|:---------------------------------------------------------------------------------|--------------------:|-------------------:|:----------------------------|:--------------------|:---------------------------------------------------------------------------------------------------------------------|
+| persistent_school_absence    | 1.0.0     | Attendance below 90 percent in at least two academic terms.                      |                5000 |                661 | 13.2%                       | 100.0%              | Missing attendance must not be interpreted as absence. | Attendance completeness is lower during academic year 2020. |
+| recurrent_hospital_admission | 1.0.0     | At least two linked hospital admissions within a 365-day interval.               |                4486 |               1719 | 38.3%                       | 89.7%               | The synthetic example excludes unmatched and ambiguous source records.                                               |
+| chronic_condition_group      | 1.0.0     | At least one linked hospital admission in a selected grouped diagnosis category. |                4466 |               2452 | 54.9%                       | 89.3%               | Diagnosis groups are simplified synthetic categories and are not clinical code lists.                                |

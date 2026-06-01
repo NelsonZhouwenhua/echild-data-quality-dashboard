@@ -1,0 +1,48 @@
+persistent_school_absence:
+  version: "1.0.0"
+  description: Attendance below 90 percent in at least two academic terms.
+  source_table: education_records
+  variables:
+    - linked_child_id
+    - academic_year
+    - term
+    - attendance_rate
+  logic:
+    threshold: 0.90
+    minimum_terms: 2
+  missing_data_rule:
+    exclude_missing_attendance: true
+  limitations:
+    - Missing attendance must not be interpreted as absence.
+    - Attendance completeness is lower during academic year 2020.
+
+recurrent_hospital_admission:
+  version: "1.0.0"
+  description: At least two linked hospital admissions within a 365-day interval.
+  source_table: health_episodes
+  variables:
+    - linked_child_id
+    - admission_date
+  logic:
+    minimum_admissions: 2
+    interval_days: 365
+  missing_data_rule:
+    exclude_unlinked_records: true
+  limitations:
+    - The synthetic example excludes unmatched and ambiguous source records.
+
+chronic_condition_group:
+  version: "1.0.0"
+  description: At least one linked hospital admission in a selected grouped diagnosis category.
+  source_table: health_episodes
+  variables:
+    - linked_child_id
+    - diagnosis_group
+  logic:
+    diagnosis_groups:
+      - Respiratory
+      - Neurology
+  missing_data_rule:
+    exclude_missing_diagnosis: true
+  limitations:
+    - Diagnosis groups are simplified synthetic categories and are not clinical code lists.

@@ -1,0 +1,9 @@
+public_output_rules:
+  minimum_cell_count: 10
+  suppress_small_cells: true
+  allow_row_level_exports: false
+  allow_free_text_sql: false
+  note: >
+    Illustrative portfolio configuration only. This does not claim to
+    reproduce Office for National Statistics Secure Research Service
+    output-checking rules.

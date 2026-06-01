@@ -1,0 +1,55 @@
+- rule_id: health_admission_before_birth
+  source: health
+  category: consistency
+  severity: error
+  check_name: admission_before_birth
+  recommended_action: Exclude flagged records from analysis and review the source logic.
+
+- rule_id: health_discharge_before_admission
+  source: health
+  category: consistency
+  severity: error
+  check_name: discharge_before_admission
+  recommended_action: Exclude flagged records and review event-date derivation.
+
+- rule_id: education_attendance_out_of_range
+  source: education
+  category: validity
+  severity: error
+  check_name: attendance_out_of_range
+  recommended_action: Set invalid values to missing and document the cleaning rule.
+
+- rule_id: education_school_stage_age_inconsistency
+  source: education
+  category: consistency
+  severity: warning
+  check_name: school_stage_age_inconsistency
+  recommended_action: Review age and school-stage logic before cohort extraction.
+
+- rule_id: duplicate_source_record_id
+  source: all
+  category: duplication
+  severity: warning
+  check_name: duplicate_source_record_id
+  recommended_action: Apply a documented deduplication rule and retain an audit count.
+
+- rule_id: social_care_referral_before_birth
+  source: social_care
+  category: consistency
+  severity: error
+  check_name: referral_before_birth
+  recommended_action: Exclude flagged records and review event-date derivation.
+
+- rule_id: education_attendance_missingness_shift
+  source: education
+  category: completeness
+  severity: warning
+  check_name: attendance_missingness_shift_2020
+  recommended_action: Report the 2020 limitation and run a sensitivity analysis excluding 2020.
+
+- rule_id: social_care_assessment_missingness_shift
+  source: social_care
+  category: completeness
+  severity: warning
+  check_name: assessment_outcome_regional_missingness_shift
+  recommended_action: Report regional variation and check whether subgroup results are affected.

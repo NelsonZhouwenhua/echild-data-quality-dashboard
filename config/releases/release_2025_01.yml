@@ -1,0 +1,18 @@
+release_id: "2025_01"
+refresh_date: "2025-01-15"
+sources:
+  health:
+    available_from: 2016
+    available_to: 2024
+    modules: [admissions, outpatient]
+    qa_status: Passed
+  education:
+    available_from: 2017
+    available_to: 2024
+    modules: [enrolment, attendance, sen_support]
+    qa_status: Passed
+  social_care:
+    available_from: 2016
+    available_to: 2024
+    modules: [referrals, assessments]
+    qa_status: Warning

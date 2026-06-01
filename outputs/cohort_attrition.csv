@@ -1,0 +1,7 @@
+step,description,input_children,retained_children,removed_children
+Population spine,All synthetic children,5000,5000,0
+Birth-year eligibility,Born between 2010 and 2015,5000,2778,2222
+Follow-up eligibility,At least 2 years of potential follow-up,2778,2778,0
+Index admission,First Respiratory admission during 2018-2022,2778,648,2130
+Linked education module,At least one matched education record,648,648,0
+Valid outcome availability,Sufficient valid records to derive persistent_school_absence,648,648,0

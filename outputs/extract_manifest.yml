@@ -1,0 +1,50 @@
+research_question: Persistent school absence after hospital admission
+cohort_design: Index hospital-admission cohort
+filters:
+  cohort_design: Index hospital-admission cohort
+  birth_year_min: 2010
+  birth_year_max: 2015
+  regions: []
+  deprivation_quintiles: []
+  min_follow_up_years: 2
+  index_year_min: 2018
+  index_year_max: 2022
+  school_inception_year: 2020
+  diagnosis_group: Respiratory
+  require_health: true
+  require_education: true
+  require_social_care: false
+  outcome_phenotype: persistent_school_absence
+required_sources:
+- health_admissions
+- education_attendance
+required_variables:
+- linked_child_id
+- birth_year
+- deprivation_quintile
+- region
+- admission_date
+- diagnosis_group
+- academic_year
+- term
+- attendance_rate
+aggregate_summary:
+  initial_population_spine: 5000
+  final_analytical_cohort: 648
+  health_records: 2092
+  education_records: 12984
+  social_care_records: 409
+  children_with_health: 648
+  children_with_education: 648
+  children_with_social_care: 179
+  median_follow_up_years: 12.0
+  education_attendance_missing_rate: 0.053758471965496
+known_limitations:
+- Attendance completeness is lower during academic year 2020. Consider a sensitivity
+  analysis excluding 2020.
+- Education linkage rates differ across deprivation quintiles. Compare linked and
+  unlinked groups before interpreting subgroup results.
+- This is a descriptive feasibility assessment using synthetic data. It is not a causal-effect
+  estimate.
+public_output_note: Aggregate-only synthetic portfolio output. Row-level extracts
+  are not exposed.
